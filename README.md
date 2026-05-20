@@ -17,6 +17,10 @@ O projeto foi construído utilizando as tecnologias fundamentais da web de forma
 * script.js: Arquivo para comportamentos e interatividades do usuário.
 * /pages: Diretório contendo as demais páginas e fluxos do sistema de abrigo.
 
+## Próximos Passos
+
+* Desenvolvimento do Back-end: O sistema receberá uma estrutura de servidor e banco de dados futuramente para realizar o armazenamento real das informações.
+
 ## Contexto Acadêmico
 
-O código deste projeto foi desenvolvido manualmente e de forma incremental. A estrutura do código conta com comentários de organização estrutural para facilitar a navegação do desenvolvedor e a correção por parte do professor
+O código deste projeto foi desenvolvido manualmente e de forma incremental. A estrutura do código conta com comentários de organização estrutural para facilitar a navegação do desenvolvedor e a correção por parte do professor.
