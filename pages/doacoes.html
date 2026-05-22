@@ -2,35 +2,40 @@
 <html lang="pt-br">
 
 <head>
+
   <meta charset="UTF-8">
+
   <title>Doações</title>
 
   <link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
 
   <div class="box">
 
-    <h1>Registro de Doações</h1>
+    <h1>Doações</h1>
 
-    <form>
+    <form id="form-doacoes">
 
-      <input type="text" placeholder="Nome do Doador">
+      <input
+        type="text"
+        id="item-doacao"
+        placeholder="Item"
+      >
 
-      <input type="text" placeholder="Item Doado">
+      <input
+        type="number"
+        id="quantidade-doacao"
+        placeholder="Quantidade"
+      >
 
       <button type="submit">
-        Registrar Doação
+        Registrar
       </button>
 
     </form>
-
-    <br>
-
-    <a class="voltar" href="../index.html">
-      ← Voltar
-    </a>
 
   </div>
 

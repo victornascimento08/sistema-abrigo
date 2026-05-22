@@ -1,0 +1,27 @@
+{
+  "name": "sistema-abrigo",
+  "version": "1.0.0",
+  "description": "Este é um projeto de desenvolvimento web focado em front-end, criado como trabalho acadêmico para a faculdade. O objetivo do sistema é gerenciar e estruturar a interface de um abrigo social.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victornascimento08/sistema-abrigo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/victornascimento08/sistema-abrigo/issues"
+  },
+  "homepage": "https://github.com/victornascimento08/sistema-abrigo#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security"
+  }
+}

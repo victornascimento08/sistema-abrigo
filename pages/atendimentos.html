@@ -2,42 +2,39 @@
 <html lang="pt-br">
 
 <head>
+
   <meta charset="UTF-8">
+
   <title>Atendimentos</title>
 
   <link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
 
   <div class="box">
 
-    <h1>Registro de Atendimentos</h1>
+    <h1>Atendimentos</h1>
 
-    <form>
+    <form id="form-atendimentos">
 
-      <input type="text" placeholder="Nome">
+      <input
+        type="text"
+        id="nome-atendimento"
+        placeholder="Nome"
+      >
 
-      <select>
-        <option value="">Selecione</option>
-        <option>Médico</option>
-        <option>Social</option>
-        <option>Psicológico</option>
-      </select>
-
-      <textarea placeholder="Observações"></textarea>
+      <textarea
+        id="descricao"
+        placeholder="Descrição"
+      ></textarea>
 
       <button type="submit">
-        Registrar Atendimento
+        Registrar
       </button>
 
     </form>
-
-    <br>
-
-    <a class="voltar" href="../index.html">
-      ← Voltar
-    </a>
 
   </div>
 
