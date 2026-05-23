@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doações</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eeeeee;
+            margin: 0;
+        }
 
-  <meta charset="UTF-8">
+        header {
+            background: #e91e63;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-  <title>Doações</title>
-
-  <link rel="stylesheet" href="../style.css">
-
+        .doacao {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="box">
+<header>
+    <h1>Controle de Doações</h1>
+</header>
 
-    <h1>Doações</h1>
+<div class="doacao">
+    <h3>Alimentos</h3>
+    <p>Doador: Mercado Central</p>
+</div>
 
-    <form id="form-doacoes">
-
-      <input
-        type="text"
-        id="item-doacao"
-        placeholder="Item"
-      >
-
-      <input
-        type="number"
-        id="quantidade-doacao"
-        placeholder="Quantidade"
-      >
-
-      <button type="submit">
-        Registrar
-      </button>
-
-    </form>
-
-  </div>
-
-  <script src="../script.js"></script>
+<div class="doacao">
+    <h3>Roupas</h3>
+    <p>Doador: Comunidade</p>
+</div>
 
 </body>
-
 </html>

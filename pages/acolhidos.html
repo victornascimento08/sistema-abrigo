@@ -1,51 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acolhidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-  <meta charset="UTF-8">
+        header {
+            background: #ff9800;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-  <title>Acolhidos</title>
+        .container {
+            padding: 20px;
+        }
 
-  <link
-    rel="stylesheet"
-    href="../style.css"
-  >
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
 
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #ff9800;
+            color: white;
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="box">
+<header>
+    <h1>Gestão de Acolhidos</h1>
+</header>
 
-    <h1>
-      Cadastro de Acolhidos
-    </h1>
-
-    <form id="form-acolhidos">
-
-      <input
-        type="text"
-        id="nome"
-        placeholder="Nome"
-      >
-
-      <input
-        type="number"
-        id="idade"
-        placeholder="Idade"
-      >
-
-      <button type="submit">
-        Cadastrar
-      </button>
-
-    </form>
-
-  </div>
-
-  <script src="../script.js"></script>
+<div class="container">
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Quarto</th>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>12</td>
+            <td>1</td>
+        </tr>
+    </table>
+</div>
 
 </body>
-
 </html>

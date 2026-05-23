@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f0f0;
+            margin: 0;
+        }
 
-  <meta charset="UTF-8">
+        header {
+            background: #2196f3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-  <title>Estoque</title>
-
-  <link rel="stylesheet" href="../style.css">
-
+        .card {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="box">
-
+<header>
     <h1>Controle de Estoque</h1>
+</header>
 
-    <form id="form-estoque">
+<div class="card">
+    <h3>Alimentos</h3>
+    <p>Quantidade: 50</p>
+</div>
 
-      <input
-        type="text"
-        id="produto"
-        placeholder="Produto"
-      >
-
-      <input
-        type="number"
-        id="quantidade-estoque"
-        placeholder="Quantidade"
-      >
-
-      <button type="submit">
-        Adicionar
-      </button>
-
-    </form>
-
-  </div>
-
-  <script src="../script.js"></script>
+<div class="card">
+    <h3>Roupas</h3>
+    <p>Quantidade: 30</p>
+</div>
 
 </body>
-
 </html>

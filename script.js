@@ -1,159 +1,123 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Menu de navegação
+function abrirPagina(pagina) {
+    window.location.href = pagina;
+}
 
-  /* ACOLHIDOS */
+// ===============================
+// ACOLHIDOS
+// ===============================
 
-  const formAcolhidos =
-    document.getElementById("form-acolhidos");
+async function carregarAcolhidos() {
+    try {
+        const resposta = await fetch('/api/acolhidos');
+        const dados = await resposta.json();
 
-  if (formAcolhidos) {
+        const tabela = document.getElementById('tabela-acolhidos');
 
-    formAcolhidos.addEventListener(
-      "submit",
-      async (e) => {
+        if (!tabela) return;
 
-        e.preventDefault();
+        tabela.innerHTML = '';
 
-        const nome =
-          document.getElementById("nome").value;
+        dados.forEach(acolhido => {
+            tabela.innerHTML += `
+                <tr>
+                    <td>${acolhido.nome || '-'}</td>
+                    <td>${acolhido.idade || '-'}</td>
+                    <td>${acolhido.quarto || '-'}</td>
+                </tr>
+            `;
+        });
 
-        const idade =
-          document.getElementById("idade").value;
+    } catch (erro) {
+        console.error('Erro ao carregar acolhidos:', erro);
+    }
+}
 
-        const resposta = await fetch(
-          "http://localhost:3000/acolhidos",
-          {
-            method: "POST",
+// ===============================
+// ESTOQUE
+// ===============================
 
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
+async function carregarEstoque() {
+    try {
+        const resposta = await fetch('/api/estoque');
+        const dados = await resposta.json();
 
-            body: JSON.stringify({
-              nome,
-              idade
-            })
-          }
-        );
+        const lista = document.getElementById('lista-estoque');
 
-        const resultado =
-          await resposta.json();
+        if (!lista) return;
 
-        alert(resultado.mensagem);
+        lista.innerHTML = '';
 
-        formAcolhidos.reset();
+        dados.forEach(item => {
+            lista.innerHTML += `
+                <div class="card">
+                    <h3>${item.nome || '-'}</h3>
+                    <p>Quantidade: ${item.quantidade || 0}</p>
+                </div>
+            `;
+        });
 
-      }
-    );
+    } catch (erro) {
+        console.error('Erro ao carregar estoque:', erro);
+    }
+}
 
-  }
+// ===============================
+// FUNCIONÁRIOS
+// ===============================
 
-  /* FUNCIONARIOS */
+async function carregarFuncionarios() {
+    try {
+        const resposta = await fetch('/api/funcionarios');
+        const dados = await resposta.json();
 
-  const formFuncionarios =
-    document.getElementById(
-      "form-funcionarios"
-    );
+        const lista = document.getElementById('lista-funcionarios');
 
-  if (formFuncionarios) {
+        if (!lista) return;
 
-    formFuncionarios.addEventListener(
-      "submit",
-      async (e) => {
+        lista.innerHTML = '';
 
-        e.preventDefault();
+        dados.forEach(funcionario => {
+            lista.innerHTML += `
+                <div class="funcionario">
+                    <h3>${funcionario.nome || '-'}</h3>
+                    <p>Cargo: ${funcionario.cargo || '-'}</p>
+                </div>
+            `;
+        });
 
-        const nome =
-          document.getElementById(
-            "nome-funcionario"
-          ).value;
+    } catch (erro) {
+        console.error('Erro ao carregar funcionários:', erro);
+    }
+}
 
-        const cargo =
-          document.getElementById(
-            "cargo"
-          ).value;
+// ===============================
+// RELATÓRIOS
+// ===============================
 
-        const resposta = await fetch(
-          "http://localhost:3000/funcionarios",
-          {
-            method: "POST",
+function carregarRelatorios() {
 
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
+    const totalAcolhidos = document.getElementById('total-acolhidos');
+    const totalFuncionarios = document.getElementById('total-funcionarios');
 
-            body: JSON.stringify({
-              nome,
-              cargo
-            })
-          }
-        );
+    if (totalAcolhidos) {
+        totalAcolhidos.innerText = '25';
+    }
 
-        const resultado =
-          await resposta.json();
+    if (totalFuncionarios) {
+        totalFuncionarios.innerText = '8';
+    }
+}
 
-        alert(resultado.mensagem);
+// ===============================
+// INICIALIZAÇÃO
+// ===============================
 
-        formFuncionarios.reset();
+document.addEventListener('DOMContentLoaded', () => {
 
-      }
-    );
-
-  }
-
-  /* DOACOES */
-
-  const formDoacoes =
-    document.getElementById(
-      "form-doacoes"
-    );
-
-  if (formDoacoes) {
-
-    formDoacoes.addEventListener(
-      "submit",
-      async (e) => {
-
-        e.preventDefault();
-
-        const item =
-          document.getElementById(
-            "item-doacao"
-          ).value;
-
-        const quantidade =
-          document.getElementById(
-            "quantidade-doacao"
-          ).value;
-
-        const resposta = await fetch(
-          "http://localhost:3000/doacoes",
-          {
-            method: "POST",
-
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-
-            body: JSON.stringify({
-              item,
-              quantidade
-            })
-          }
-        );
-
-        const resultado =
-          await resposta.json();
-
-        alert(resultado.mensagem);
-
-        formDoacoes.reset();
-
-      }
-    );
-
-  }
+    carregarAcolhidos();
+    carregarEstoque();
+    carregarFuncionarios();
+    carregarRelatorios();
 
 });

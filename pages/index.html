@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Abrigo</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #ff9800;
+            color: white;
+            padding: 20px;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .card {
+            width: 200px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sistema Abrigo</h1>
+</header>
+
+<div class="menu">
+
+    <div class="card" onclick="window.location.href='/acolhidos'">
+        Acolhidos
+    </div>
+
+    <div class="card" onclick="window.location.href='/estoque'">
+        Estoque
+    </div>
+
+    <div class="card" onclick="window.location.href='/funcionarios'">
+        Funcionários
+    </div>
+
+    <div class="card" onclick="window.location.href='/relatorios'">
+        Relatórios
+    </div>
+
+    <div class="card" onclick="window.location.href='/doacoes'">
+        Doações
+    </div>
+
+    <div class="card" onclick="window.location.href='/atendimento'">
+        Atendimento
+    </div>
+
+</div>
+
+</body>
+</html>

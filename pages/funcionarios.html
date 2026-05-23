@@ -1,46 +1,47 @@
-<<!DOCTYPE html>
-<html lang="pt-br">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #fafafa;
+            margin: 0;
+        }
 
-  <meta charset="UTF-8">
+        header {
+            background: #4caf50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-  <title>Funcionários</title>
-
-  <link rel="stylesheet" href="../style.css">
-
+        .funcionario {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="box">
-
+<header>
     <h1>Funcionários</h1>
+</header>
 
-    <form id="form-funcionarios">
+<div class="funcionario">
+    <h3>João Silva</h3>
+    <p>Cargo: Coordenador</p>
+</div>
 
-      <input
-        type="text"
-        id="nome-funcionario"
-        placeholder="Nome"
-      >
-
-      <input
-        type="text"
-        id="cargo"
-        placeholder="Cargo"
-      >
-
-      <button type="submit">
-        Cadastrar
-      </button>
-
-    </form>
-
-  </div>
-
-  <script src="../script.js"></script>
+<div class="funcionario">
+    <h3>Ana Souza</h3>
+    <p>Cargo: Assistente Social</p>
+</div>
 
 </body>
-
 </html>

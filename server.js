@@ -1,337 +1,62 @@
-const express = require("express");
-
-const cors = require("cors");
-
-const fs = require("fs");
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
+const PORT = 3000;
 
-app.use(cors());
+// arquivos estáticos
+app.use(express.static(path.join(__dirname, 'pages')));
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
 
-app.use(express.json());
-
-app.use(express.static(__dirname));
-
-// ======================
-
-// TESTE
-
-// ======================
-
-app.get("/", (req, res) => {
-
-    res.send("Servidor funcionando!");
-
+// página inicial
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'index.html'));
 });
 
-// ======================
-
-// ACOLHIDOS
-
-// ======================
-
-app.get("/acolhidos", (req, res) => {
-
-    const dados = fs.readFileSync("./data/acolhidos.json");
-
-    const acolhidos = JSON.parse(dados);
-
-    res.json(acolhidos);
-
+// páginas HTML
+app.get('/acolhidos', (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'acolhidos.html'));
 });
 
-app.post("/acolhidos", (req, res) => {
-
-    const novo = req.body;
-
-    const dados = fs.readFileSync("./data/acolhidos.json");
-
-    const acolhidos = JSON.parse(dados);
-
-    acolhidos.push(novo);
-
-    fs.writeFileSync(
-
-        "./data/acolhidos.json",
-
-        JSON.stringify(acolhidos, null, 2)
-
-    );
-
-    res.json({
-
-        mensagem: "Acolhido cadastrado!"
-
-    });
-
+app.get('/estoque', (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'estoque.html'));
 });
 
-// ======================
-
-// FUNCIONÁRIOS
-
-// ======================
-
-app.get("/funcionarios", (req, res) => {
-
-    const dados = fs.readFileSync("./data/funcionarios.json");
-
-    const funcionarios = JSON.parse(dados);
-
-    res.json(funcionarios);
-
+app.get('/funcionarios', (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'funcionarios.html'));
 });
 
-app.post("/funcionarios", (req, res) => {
-
-    const novo = req.body;
-
-    const dados = fs.readFileSync("./data/funcionarios.json");
-
-    const funcionarios = JSON.parse(dados);
-
-    funcionarios.push(novo);
-
-    fs.writeFileSync(
-
-        "./data/funcionarios.json",
-
-        JSON.stringify(funcionarios, null, 2)
-
-    );
-
-    res.json({
-
-        mensagem: "Funcionário cadastrado!"
-
-    });
-
+app.get('/relatorios', (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'relatorios.html'));
 });
 
-// ======================
-
-// DOAÇÕES
-
-// ======================
-
-app.get("/doacoes", (req, res) => {
-
-    const dados = fs.readFileSync("./data/doacoes.json");
-
-    const doacoes = JSON.parse(dados);
-
-    res.json(doacoes);
-
+app.get('/doacoes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'doacoes.html'));
 });
 
-app.post("/doacoes", (req, res) => {
-
-    const nova = req.body;
-
-    const dados = fs.readFileSync("./data/doacoes.json");
-
-    const doacoes = JSON.parse(dados);
-
-    doacoes.push(nova);
-
-    fs.writeFileSync(
-
-        "./data/doacoes.json",
-
-        JSON.stringify(doacoes, null, 2)
-
-    );
-
-    res.json({
-
-        mensagem: "Doação cadastrada!"
-
-    });
-
+app.get('/atendimento', (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'atendimento.html'));
 });
 
-// ======================
-
-// ATENDIMENTOS
-
-// ======================
-
-app.get("/atendimentos", (req, res) => {
-
-    const dados = fs.readFileSync("./data/atendimentos.json");
-
-    const atendimentos = JSON.parse(dados);
-
-    res.json(atendimentos);
-
+// APIs JSON
+app.get('/api/acolhidos', (req, res) => {
+    const dados = fs.readFileSync('./database/acolhidos.json', 'utf8');
+    res.json(JSON.parse(dados));
 });
 
-app.post("/atendimentos", (req, res) => {
-
-    const novo = req.body;
-
-    const dados = fs.readFileSync("./data/atendimentos.json");
-
-    const atendimentos = JSON.parse(dados);
-
-    atendimentos.push(novo);
-
-    fs.writeFileSync(
-
-        "./data/atendimentos.json",
-
-        JSON.stringify(atendimentos, null, 2)
-
-    );
-
-    res.json({
-
-        mensagem: "Atendimento cadastrado!"
-
-    });
-
+app.get('/api/estoque', (req, res) => {
+    const dados = fs.readFileSync('./database/estoque.json', 'utf8');
+    res.json(JSON.parse(dados));
 });
 
-// ======================
-
-// ESTOQUE
-
-// ======================
-
-app.get("/estoque", (req, res) => {
-
-    const dados = fs.readFileSync("./data/estoque.json");
-
-    const estoque = JSON.parse(dados);
-
-    res.json(estoque);
-
+app.get('/api/funcionarios', (req, res) => {
+    const dados = fs.readFileSync('./database/funcionarios.json', 'utf8');
+    res.json(JSON.parse(dados));
 });
 
-app.post("/estoque", (req, res) => {
-
-    const novo = req.body;
-
-    const dados = fs.readFileSync("./data/estoque.json");
-
-    const estoque = JSON.parse(dados);
-
-    estoque.push(novo);
-
-    fs.writeFileSync(
-
-        "./data/estoque.json",
-
-        JSON.stringify(estoque, null, 2)
-
-    );
-
-    res.json({
-
-        mensagem: "Item adicionado ao estoque!"
-
-    });
-
-});
-
-// ======================
-
-// RELATÓRIOS
-
-// ======================
-
-app.get("/relatorios", (req, res) => {
-
-    const acolhidos = JSON.parse(
-
-        fs.readFileSync("./data/acolhidos.json")
-
-    );
-
-    const funcionarios = JSON.parse(
-
-        fs.readFileSync("./data/funcionarios.json")
-
-    );
-
-    const doacoes = JSON.parse(
-
-        fs.readFileSync("./data/doacoes.json")
-
-    );
-
-    const atendimentos = JSON.parse(
-
-        fs.readFileSync("./data/atendimentos.json")
-
-    );
-
-    const estoque = JSON.parse(
-
-        fs.readFileSync("./data/estoque.json")
-
-    );
-
-    res.json({
-
-        totalAcolhidos: acolhidos.length,
-
-        totalFuncionarios: funcionarios.length,
-
-        totalDoacoes: doacoes.length,
-
-        totalAtendimentos: atendimentos.length,
-
-        totalItensEstoque: estoque.length
-
-    });
-
-});
-
-// ======================
-
-// LOGIN
-
-// ======================
-
-app.post("/login", (req, res) => {
-
-    const email = req.body.email;
-
-    const senha = req.body.senha;
-
-    if(email === "admin@abrigo.com" && senha === "123456"){
-
-        res.json({
-
-            sucesso: true,
-
-            mensagem: "Login realizado"
-
-        });
-
-    } else {
-
-        res.json({
-
-            sucesso: false,
-
-            mensagem: "Login inválido"
-
-        });
-
-    }
-
-});
-
-// ======================
-
-// PORTA
-
-// ======================
-
-app.listen(3000, () => {
-
-    console.log("Servidor rodando na porta 3000");
-
+// iniciar servidor
+app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
