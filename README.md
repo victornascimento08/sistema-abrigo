@@ -1,26 +1,117 @@
-# Sistema Abrigo
+# Sistema de Gestão de Abrigo
 
-Este é um projeto de desenvolvimento web focado em front-end, criado como trabalho acadêmico para a faculdade. O objetivo do sistema é gerenciar e estruturar a interface de um abrigo social.
+## Descrição do Projeto
 
-## Tecnologias Utilizadas
+Sistema web desenvolvido para gerenciamento de um abrigo, com controle de acolhidos, funcionários, estoque, doações, atendimentos e relatórios.
 
-O projeto foi construído utilizando as tecnologias fundamentais da web de forma nativa:
+O projeto foi construído utilizando Node.js, Express, HTML, CSS e JavaScript, com armazenamento inicial em arquivos JSON.
 
-* HTML5: Estruturação semântica de todas as páginas e formulários do sistema.
-* CSS3: Estilização visual, organização de layout e responsividade das páginas.
-* JavaScript: Implementação de lógicas e interatividades da interface.
+---
+
+## Status do Projeto
+
+### Versão atual
+
+- MVP funcional (protótipo completo)
+- Sistema rodando localmente em localhost:3000
+- Backend e frontend integrados
+- Navegação entre módulos funcionando
+- APIs básicas implementadas
+
+---
+
+## Módulos do Sistema
+
+- Acolhidos (gestão de moradores do abrigo)
+- Funcionários (controle da equipe)
+- Estoque (itens e suprimentos)
+- Doações (registro de entradas)
+- Atendimento (serviços prestados)
+- Relatórios (visão geral do sistema)
+
+---
 
 ## Estrutura do Projeto
 
-* index.html: Página principal e portal de entrada do sistema.
-* style.css: Arquivo centralizador de estilos do projeto.
-* script.js: Arquivo para comportamentos e interatividades do usuário.
-* /pages: Diretório contendo as demais páginas e fluxos do sistema de abrigo.
+```plaintext
+pages/
+database/
+js/
+server.js
+Backend
 
-## Próximos Passos
+O backend foi desenvolvido com Express.js e possui:
 
-* Desenvolvimento do Back-end: O sistema receberá uma estrutura de servidor e banco de dados futuramente para realizar o armazenamento real das informações.
+Servidor rodando na porta 3000
+Rotas para páginas do sistema
+Servir arquivos HTML
+APIs para leitura de dados em JSON
+Rotas do Sistema
+/
+/acolhidos
+/funcionarios
+/estoque
+/doacoes
+/atendimento
+/relatorios
+APIs
+/api/acolhidos
+/api/funcionarios
+/api/estoque
+Frontend
 
-## Contexto Acadêmico
+Páginas do sistema:
 
-O código deste projeto foi desenvolvido manualmente e de forma incremental. A estrutura do código conta com comentários de organização estrutural para facilitar a navegação do desenvolvedor e a correção por parte do professor.
+index.html
+acolhidos.html
+funcionarios.html
+estoque.html
+doacoes.html
+atendimento.html
+relatorios.html
+Integração
+Comunicação entre frontend e backend via fetch
+Dados armazenados em arquivos JSON
+Navegação entre páginas via rotas Express
+Script único para carregamento de dados
+Problemas resolvidos
+Erros de rota (Cannot GET)
+Erros de arquivo (ENOENT)
+Correção de caminhos de pastas (data → database)
+Ajuste de nomes de arquivos
+Integração frontend/backend
+Versão atual (MVP)
+
+Sistema funcional com:
+
+Navegação entre módulos
+Backend Express operacional
+APIs funcionando
+Estrutura organizada
+Versão final (visão do projeto)
+Backend avançado
+CRUD completo (Create, Read, Update, Delete)
+Banco de dados real (MySQL ou MongoDB)
+Validação de dados
+Arquitetura MVC (routes, controllers, services, models)
+Autenticação
+Sistema de login
+Controle de acesso de usuários
+Proteção de rotas
+Funcionalidades avançadas
+Dashboard com gráficos
+Filtros e buscas
+Histórico de registros
+Notificações
+Interface aprimorada
+Interface responsiva
+Melhor UX/UI
+Formulários dinâmicos
+Atualização sem recarregar página
+Deploy
+Hospedagem online
+Backend em nuvem
+Banco de dados remoto
+Objetivo do Projeto
+
+Criar um sistema completo de gestão de abrigo, evoluindo de um MVP funcional para uma aplicação profissional e escalável.
