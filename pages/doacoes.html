@@ -4,43 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doações</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #eeeeee;
-            margin: 0;
-        }
-
-        header {
-            background: #e91e63;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .doacao {
-            background: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
 <header>
-    <h1>Controle de Doações</h1>
+    <h1>Doações</h1>
 </header>
 
-<div class="doacao">
-    <h3>Alimentos</h3>
-    <p>Doador: Mercado Central</p>
+<div class="container">
+    <a href="/" class="voltar">← Voltar ao Menu</a>
+
+    <form id="formDoacao">
+        <input type="text" id="doador" placeholder="Doador" required>
+        <input type="text" id="item" placeholder="Item" required>
+        <input type="number" id="quantidade" placeholder="Quantidade" required>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Doador</th>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaDoacoes"></tbody>
+    </table>
 </div>
 
-<div class="doacao">
-    <h3>Roupas</h3>
-    <p>Doador: Comunidade</p>
-</div>
-
+<script src="/js/doacoes.js"></script>
 </body>
 </html>

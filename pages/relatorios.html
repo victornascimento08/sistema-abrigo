@@ -4,27 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4f4f4;
-            margin: 0;
-        }
-
-        header {
-            background: #9c27b0;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .relatorio {
-            background: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -32,15 +12,35 @@
     <h1>Relatórios</h1>
 </header>
 
-<div class="relatorio">
-    <h3>Total de Acolhidos</h3>
-    <p>25</p>
+<div class="container">
+    <a href="/" class="voltar">← Voltar ao Menu</a>
+
+    <div class="card">
+        <h2>Acolhidos</h2>
+        <p id="totalAcolhidos">Carregando...</p>
+    </div>
+
+    <div class="card">
+        <h2>Funcionários</h2>
+        <p id="totalFuncionarios">Carregando...</p>
+    </div>
+
+    <div class="card">
+        <h2>Estoque</h2>
+        <p id="totalEstoque">Carregando...</p>
+    </div>
+
+    <div class="card">
+        <h2>Doações</h2>
+        <p id="totalDoacoes">Carregando...</p>
+    </div>
+
+    <div class="card">
+        <h2>Atendimento</h2>
+        <p id="totalAtendimento">Carregando...</p>
+    </div>
 </div>
 
-<div class="relatorio">
-    <h3>Total de Funcionários</h3>
-    <p>8</p>
-</div>
-
+<script src="/js/relatorios.js"></script>
 </body>
 </html>

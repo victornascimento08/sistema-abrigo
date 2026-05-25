@@ -1,1 +1,22 @@
- [ ]
+[
+  {
+    "id": 1779745959710,
+    "produto": "Arroz",
+    "quantidade": "50"
+  },
+  {
+    "id": 1779745969150,
+    "produto": "Feijão",
+    "quantidade": "30"
+  },
+  {
+    "id": 1779745999709,
+    "produto": "Sabonete",
+    "quantidade": "100"
+  },
+  {
+    "id": 1779746009896,
+    "produto": "Colchão",
+    "quantidade": "15"
+  }
+]

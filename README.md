@@ -1,117 +1,114 @@
-# Sistema de Gestão de Abrigo
-
-## Descrição do Projeto
+# Sistema Abrigo
 
 Sistema web desenvolvido para gerenciamento de um abrigo, com controle de acolhidos, funcionários, estoque, doações, atendimentos e relatórios.
 
-O projeto foi construído utilizando Node.js, Express, HTML, CSS e JavaScript, com armazenamento inicial em arquivos JSON.
+O projeto foi construído utilizando *Node.js, **Express, **HTML, **CSS* e *JavaScript, com armazenamento em arquivos **JSON*.
 
 ---
 
 ## Status do Projeto
 
-### Versão atual
+- Versão: *1.0.0 — Finalizado*
+- Sistema rodando localmente em http://127.0.0.1:3000
+- Backend e frontend integrados e funcionando
+- Todos os módulos operacionais
 
-- MVP funcional (protótipo completo)
-- Sistema rodando localmente em localhost:3000
-- Backend e frontend integrados
-- Navegação entre módulos funcionando
-- APIs básicas implementadas
+---
+
+## Banco de Dados
+
+O projeto utiliza *arquivos JSON* como banco de dados, armazenados na pasta database/:
+
+- acolhidos.json
+- funcionarios.json
+- estoque.json
+- doacoes.json
+- atendimento.json
+- relatorios.json
 
 ---
 
 ## Módulos do Sistema
 
-- Acolhidos (gestão de moradores do abrigo)
-- Funcionários (controle da equipe)
-- Estoque (itens e suprimentos)
-- Doações (registro de entradas)
-- Atendimento (serviços prestados)
-- Relatórios (visão geral do sistema)
+| Módulo | Descrição |
+|---|---|
+| Acolhidos | Gestão de moradores do abrigo |
+| Funcionários | Controle da equipe |
+| Estoque | Itens e suprimentos |
+| Doações | Registro de entradas |
+| Atendimento | Serviços prestados |
+| Relatórios | Visão geral com totais do sistema |
 
 ---
 
 ## Estrutura do Projeto
 
-```plaintext
-pages/
-database/
-js/
-server.js
-Backend
+sistema-abrigo/
+├── database/        → arquivos JSON (banco de dados)
+├── js/              → scripts do frontend
+├── pages/           → páginas HTML
+├── server.js        → backend com Express
+├── style.css        → estilos globais
+└── package.json
 
-O backend foi desenvolvido com Express.js e possui:
+---
 
-Servidor rodando na porta 3000
-Rotas para páginas do sistema
-Servir arquivos HTML
-APIs para leitura de dados em JSON
-Rotas do Sistema
-/
-/acolhidos
-/funcionarios
-/estoque
-/doacoes
-/atendimento
-/relatorios
-APIs
-/api/acolhidos
-/api/funcionarios
-/api/estoque
-Frontend
+## Backend
 
-Páginas do sistema:
+Desenvolvido com *Express.js*:
 
-index.html
-acolhidos.html
-funcionarios.html
-estoque.html
-doacoes.html
-atendimento.html
-relatorios.html
-Integração
-Comunicação entre frontend e backend via fetch
-Dados armazenados em arquivos JSON
-Navegação entre páginas via rotas Express
-Script único para carregamento de dados
-Problemas resolvidos
-Erros de rota (Cannot GET)
-Erros de arquivo (ENOENT)
-Correção de caminhos de pastas (data → database)
-Ajuste de nomes de arquivos
-Integração frontend/backend
-Versão atual (MVP)
+- Servidor rodando na porta 3000
+- Rotas para servir as páginas HTML
+- APIs REST para cada módulo
 
-Sistema funcional com:
+*Rotas de páginas:*
 
-Navegação entre módulos
-Backend Express operacional
-APIs funcionando
-Estrutura organizada
-Versão final (visão do projeto)
-Backend avançado
-CRUD completo (Create, Read, Update, Delete)
-Banco de dados real (MySQL ou MongoDB)
-Validação de dados
-Arquitetura MVC (routes, controllers, services, models)
-Autenticação
-Sistema de login
-Controle de acesso de usuários
-Proteção de rotas
-Funcionalidades avançadas
-Dashboard com gráficos
-Filtros e buscas
-Histórico de registros
-Notificações
-Interface aprimorada
-Interface responsiva
-Melhor UX/UI
-Formulários dinâmicos
-Atualização sem recarregar página
-Deploy
-Hospedagem online
-Backend em nuvem
-Banco de dados remoto
-Objetivo do Projeto
+GET /
+GET /acolhidos
+GET /funcionarios
+GET /estoque
+GET /doacoes
+GET /atendimento
+GET /relatorios
 
-Criar um sistema completo de gestão de abrigo, evoluindo de um MVP funcional para uma aplicação profissional e escalável.
+ *APIs:*
+
+ GET/POST/PUT/DELETE /api/acolhidos
+ GET/POST/PUT/DELETE /api/funcionarios
+ GET/POST/PUT/DELETE /api/estoque
+ GET/POST/PUT/DELETE /api/doacoes
+ GET/POST/PUT/DELETE /api/atendimento
+ GET                  /api/relatorios
+
+ ---
+
+## Frontend
+
+- index.html — menu principal
+- acolhidos.html
+- funcionarios.html
+- estoque.html
+- doacoes.html
+- atendimento.html
+- relatorios.html
+
+Comunicação com o backend via *fetch API*.
+
+---
+
+## Como Rodar o Projeto
+
+1. Instale as dependências:
+```bash
+ npm install
+ node server.js
+ http://127.0.0.1:3000
+ Funcionalidades 
+
+    •	Cadastrar, editar e excluir acolhidos
+	•	Cadastrar, editar e excluir funcionários
+	•	Cadastrar, editar e excluir itens do estoque
+	•	Registrar e gerenciar doações
+	•	Registrar e gerenciar atendimentos
+	•	Visualizar relatórios com totais em tempo real
+	•	Navegação entre módulos com botão voltar

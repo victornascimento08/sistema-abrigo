@@ -4,42 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acolhidos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: #ff9800;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background: #ff9800;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -48,19 +13,28 @@
 </header>
 
 <div class="container">
+    <a href="/" class="voltar">← Voltar ao Menu</a>
+
+    <form id="formAcolhido">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="number" id="idade" placeholder="Idade" required>
+        <input type="text" id="quarto" placeholder="Quarto" required>
+        <button type="submit">Salvar</button>
+    </form>
+
     <table>
-        <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Quarto</th>
-        </tr>
-        <tr>
-            <td>Maria</td>
-            <td>12</td>
-            <td>1</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Quarto</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaAcolhidos"></tbody>
     </table>
 </div>
 
+<script src="/js/script.js"></script>
 </body>
 </html>

@@ -4,27 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f0f0f0;
-            margin: 0;
-        }
-
-        header {
-            background: #2196f3;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .card {
-            background: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -32,15 +12,27 @@
     <h1>Controle de Estoque</h1>
 </header>
 
-<div class="card">
-    <h3>Alimentos</h3>
-    <p>Quantidade: 50</p>
+<div class="container">
+    <a href="/" class="voltar">← Voltar ao Menu</a>
+
+    <form id="formEstoque">
+        <input type="text" id="produto" placeholder="Produto" required>
+        <input type="number" id="quantidade" placeholder="Quantidade" required>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaEstoque"></tbody>
+    </table>
 </div>
 
-<div class="card">
-    <h3>Roupas</h3>
-    <p>Quantidade: 30</p>
-</div>
-
+<script src="/js/estoque.js"></script>
 </body>
 </html>
